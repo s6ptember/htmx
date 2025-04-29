@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="container" style="max-width: 1000px; margin: 0 auto;">
+        <h1>Модальные окна с HTMX</h1>
+        {% for product in products %}
+            <button hx-get="{% url 'main:modal_content' product.id %}" 
+                    hx-target="#modal" 
+                    hx-swap="outerHTML">
+                Подробнее о {{ product.name }}
+            </button><br>
+        {% endfor %}
+        <div id="modal" style="display: none;"></div>
+    </div>
+{% endblock %}

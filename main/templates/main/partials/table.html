@@ -1,0 +1,10 @@
+{% load static %}
+<div class="products-container" style="display: flex; justify-content: center; gap: 15px;">
+    {% for product in products %}
+        <div class="product-card">
+            <img class="image" src="{% static 'img/2.jpg' %}" alt="" style="width: 200px; height: auto;">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }} руб.</p>
+        </div>
+    {% endfor %}
+</div>

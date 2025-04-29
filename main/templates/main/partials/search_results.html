@@ -1,0 +1,5 @@
+{% for product in products %}
+    <div>{{ product.name }} ({{ product.category }}) - {{ product.price }} руб.</div>
+{% empty %}
+    <div>Ничего не найдено</div>
+{% endfor %}

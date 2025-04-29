@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="search-container">
+        <div>
+            <input style="width: 868px;" type="text" name="query" placeholder="Поиск товаров..." 
+                hx-get="{% url 'main:search_results' %}" 
+                hx-trigger="keyup changed delay:100ms" 
+                hx-target="#search-results">
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+{% endblock %}

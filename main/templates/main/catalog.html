@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="container" style="max-width: 1000px; margin: 0 auto;">
+        <h1>Каталог товаров</h1>
+        <select name="category" hx-get="{% url 'main:catalog_table' %}" hx-target="#products-table" hx-trigger="change">
+            <option value="">Все категории</option>
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+
+        <div id="products-table">
+            {% include 'main/partials/table.html' %}
+        </div>
+    </div>
+{% endblock %}

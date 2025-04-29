@@ -1,0 +1,11 @@
+<div id="modal" style="display: block;">
+    <h2>{{ product.name }}</h2>
+    <p><strong>Категория:</strong> {{ product.category }}</p>
+    <p><strong>Цена:</strong> {{ product.price }} руб.</p>
+    <p><strong>Описание:</strong> {{ product.description }}</p>
+    <button hx-get="{% url 'main:close_modal' %}" 
+            hx-target="#modal" 
+            hx-swap="outerHTML">
+        Закрыть
+    </button>
+</div>
